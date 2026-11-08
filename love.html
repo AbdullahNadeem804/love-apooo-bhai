@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah ❤️ Mariyam | Forever Love</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #10000c;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 35px 18px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page.active {
+    display: flex;
+    animation: pageShow 1s ease;
+}
+
+@keyframes pageShow {
+    from { opacity: 0; transform: scale(.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* BACKGROUND */
+
+#page1, #page2, #page3, #page4 {
+    background:
+    radial-gradient(ellipse at center, #580029 0%, #230019 45%, #090009 100%);
+}
+
+.glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #ff0055;
+    filter: blur(130px);
+    opacity: .22;
+    pointer-events: none;
+}
+
+/* COMMON BUTTON */
+
+.next-btn {
+    border: 1px solid rgba(255,255,255,.3);
+    background: linear-gradient(45deg,#ff176e,#a300ff);
+    color: white;
+    padding: 14px 45px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 28px;
+    box-shadow: 0 0 25px #ff006a;
+    transition: .3s;
+    position: relative;
+    z-index: 5;
+}
+
+.next-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px #ff006a;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* PAGE 1 */
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    color: #ff78ae;
+    font-size: clamp(45px, 10vw, 82px);
+    text-shadow: 0 0 25px #ff006a;
+    z-index: 2;
+}
+
+.subtitle {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #ffc6dc;
+    margin-top: 8px;
+    z-index: 2;
+}
+
+.welcome {
+    margin-top: 35px;
+    color: #ffe2ed;
+    font-size: 17px;
+    z-index: 2;
+}
+
+.heart-area {
+    position: relative;
+    width: min(100%, 500px);
+    height: 390px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,100,160,.2);
+}
+
+.love-heart {
+    position: absolute;
+    bottom: -70px;
+    background: transparent;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 12px #ff176e);
+    z-index: 3;
+    animation: floatHeart 6s linear infinite;
+    transition: .3s;
+}
+
+.love-heart:hover {
+    filter: drop-shadow(0 0 22px #ff8bb7);
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(.7) rotate(-10deg);
+        opacity: 0;
+    }
+    12% { opacity: 1; }
+    85% { opacity: 1; }
+    100% {
+        transform: translateY(-470px) scale(1.1) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+.love-heart.broken {
+    animation: heartBreak .55s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes heartBreak {
+    0% { transform: scale(1); opacity: 1; }
+    35% { transform: scale(1.8) rotate(20deg); }
+    65% { transform: scale(1.4) rotate(-20deg); }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.burst-message {
+    position: absolute;
+    transform: translate(-50%,-50%) scale(.2);
+    color: white;
+    font-size: clamp(12px, 3.3vw, 17px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(120,0,53,.9);
+    border: 1px solid #ff9fc6;
+    border-radius: 30px;
+    padding: 12px 15px;
+    width: max-content;
+    max-width: 95%;
+    z-index: 4;
+    box-shadow: 0 0 25px #ff176e;
+    animation: messagePop .65s forwards;
+    pointer-events: none;
+}
+
+@keyframes messagePop {
+    0% { opacity: 0; transform: translate(-50%,-50%) scale(.2); }
+    70% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+    100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+}
+
+.counter {
+    color: #ffc3da;
+    font-size: 14px;
+    margin-top: 12px;
+    z-index: 2;
+}
+
+/* PAGE 2 */
+
+#page2 {
+    perspective: 1000px;
+}
+
+.second-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(35px, 8vw, 55px);
+    color: #ff91bc;
+    text-shadow: 0 0 20px #ff006a;
+    margin-bottom: 35px;
+}
+
+.big-heart {
+    font-size: clamp(145px, 35vw, 240px);
+    cursor: pointer;
+    filter: drop-shadow(0 0 35px #ff006a);
+    animation: beat 1.2s infinite;
+    transition: 1s;
+}
+
+@keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.big-heart.opening {
+    animation: heartOpen 1s forwards;
+}
+
+@keyframes heartOpen {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(3) rotate(20deg); }
+    100% { transform: scale(7) rotate(45deg); opacity: 0; }
+}
+
+.tap-instruction {
+    color: #ffd5e6;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+/* PAGE 3 LETTER */
+
+#page3 {
+    padding: 45px 15px;
+}
+
+.letter {
+    width: min(100%, 720px);
+    padding: 30px 22px;
+    background: linear-gradient(145deg,#fff5f8,#ffd6e5);
+    border-radius: 20px;
+    color: #6d0032;
+    box-shadow: 0 0 40px rgba(255,40,120,.5);
+    animation: letterOpen 1.3s ease;
+}
+
+@keyframes letterOpen {
+    from { opacity: 0; transform: rotateY(90deg) scale(.7); }
+    to { opacity: 1; transform: rotateY(0) scale(1); }
+}
+
+.letter h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #c50050;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.letter h3 {
+    color: #c50050;
+    margin: 25px 0 15px;
+    font-size: 20px;
+}
+
+.letter p {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 2.6;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.letter .english {
+    direction: ltr;
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+    color: #d00055;
+}
+
+/* PAGE 4 */
+
+#page4 {
+    background:
+    radial-gradient(circle,#65002f,#210016 60%,#080008);
+}
+
+.final-heart {
+    font-size: 85px;
+    animation: beat 1s infinite;
+    filter: drop-shadow(0 0 25px #ff006a);
+}
+
+.final-title {
+    font-family: 'Great Vibes', cursive;
+    color: #ff75aa;
+    font-size: clamp(50px, 11vw, 95px);
+    text-shadow: 0 0 25px #ff006a;
+    margin-top: 15px;
+}
+
+.forever {
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: #ffd2e4;
+    margin-top: 15px;
+}
+
+.signature {
+    font-family: 'Noto Nastaliq Urdu',serif;
+    direction: rtl;
+    color: #ffb4d1;
+    font-size: 24px;
+    line-height: 2.4;
+    margin-top: 30px;
+}
+
+/* FLOATING BACKGROUND */
+
+.bg-heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    z-index: 0;
+    color: #ff5b99;
+    animation: backgroundRise linear forwards;
+}
+
+@keyframes backgroundRise {
+    from { transform: translateY(0) rotate(0); opacity: 0; }
+    15% { opacity: .65; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FIRST PAGE -->
+
+<section class="page active" id="page1">
+
+<div class="glow"></div>
+
+<h1 class="main-title">Abdullah ❤️ Mariyam</h1>
+
+<p class="subtitle">A BEAUTIFUL LOVE STORY</p>
+
+<p class="welcome">
+میری جان مریم! ❤️<br>
+نیچے آتے جاتے دلوں میں سے ہر دل کو چھو کر دیکھو
+</p>
+
+<div class="heart-area" id="heartArea">
+
+<button class="love-heart" style="left:5%;animation-delay:0s"
+onclick="breakHeart(this)">❤️</button>
+
+<button class="love-heart" style="left:19%;animation-delay:1s"
+onclick="breakHeart(this)">💗</button>
+
+<button class="love-heart" style="left:33%;animation-delay:2s"
+onclick="breakHeart(this)">💖</button>
+
+<button class="love-heart" style="left:47%;animation-delay:3s"
+onclick="breakHeart(this)">💕</button>
+
+<button class="love-heart" style="left:61%;animation-delay:1.5s"
+onclick="breakHeart(this)">💘</button>
+
+<button class="love-heart" style="left:75%;animation-delay:2.5s"
+onclick="breakHeart(this)">❤️</button>
+
+<button class="love-heart" style="left:88%;animation-delay:4s"
+onclick="breakHeart(this)">💓</button>
+
+</div>
+
+<p class="counter" id="counter">
+7 دل باقی ہیں ❤️
+</p>
+
+<button class="next-btn hidden" id="firstNext"
+onclick="showPage(2)">
+NEXT ❤️
+</button>
+
+</section>
+
+
+<!-- SECOND PAGE -->
+
+<section class="page" id="page2">
+
+<div class="glow"></div>
+
+<h2 class="second-title">
+A Special Heart For You
+</h2>
+
+<div class="big-heart" id="bigHeart"
+onclick="openHeart()">
+❤️
+</div>
+
+<p class="tap-instruction">
+مریم! یہ دل صرف تمہارے لیے ہے۔<br>
+اسے چھو کر دیکھو میری جان ❤️
+</p>
+
+</section>
+
+
+<!-- THIRD PAGE: LOVE LETTER -->
+
+<section class="page" id="page3">
+
+<div class="letter">
+
+<h2>My Dearest Mariyam ❤️</h2>
+
+<h3>میری پیاری مریم! ❤️</h3>
+
+<p>
+میں ایک عام سا انسان تھا، لیکن جب سے تم میری زندگی میں آئی ہو،
+تم نے مجھے جینا سکھایا ہے۔ تم نے مجھے بتایا ہے کہ محبت کیا ہوتی ہے۔
+</p>
+
+<p>
+میں بہت آوارہ لڑکا ہوا کرتا تھا، لیکن تم نے مجھے ایک بہتر انسان بنایا ہے۔
+مریم! تیرا پیار میرے لیے بہت کچھ ہے۔ میری زندگی میں تیری بہت زیادہ ویلیو ہے۔
+</p>
+
+<p>
+میں نہیں جانتا کہ تم میرے لیے کیا ہو، لیکن اتنا جانتا ہوں کہ تمہارے بغیر
+ایک پل بھی گزارنا میرے لیے بہت مشکل ہے۔
+مریم! میں تمہارے بغیر نہیں رہ سکتا۔
+</p>
+
+<p>
+I LOVE YOU MARIYAM ❤️
+<br>
+میری جان، میری وائف، میری محبت!
+</p>
+
+<h3>ایک اور بات سنو میری جان! 💗</h3>
+
+<p>
+مجھے نہیں پتا کہ تم میری زندگی میں کیسے آئیں،
+لیکن جب سے تم آئی ہو، میری زندگی پہلے جیسی نہیں رہی۔
+</p>
+
+<p>
+تم نے مجھے ہنسنا سکھایا، خوش رہنا سکھایا اور یہ احساس دلایا
+کہ کسی سے سچی محبت کرنا کسے کہتے ہیں۔
+</p>
+
+<p>
+مریم! تم میرے لیے صرف ایک لڑکی نہیں ہو،
+تم میری خوشی ہو، میری مسکراہٹ ہو اور میری زندگی کا سب سے خوبصورت حصہ ہو۔
+</p>
+
+<p>
+شاید میں ہر بار اپنے دل کی بات لفظوں میں بیان نہ کر سکوں،
+لیکن یقین کرو تم میرے لیے بہت خاص ہو۔
+</p>
+
+<p>
+مجھے تمہاری چھوٹی چھوٹی باتیں، تمہاری ناراضگی،
+تمہاری مسکراہٹ اور تمہارا پیار بہت اچھا لگتا ہے۔
+</p>
+
+<p>
+میں وعدہ کرتا ہوں کہ ہمیشہ تمہاری عزت کروں گا،
+تمہارا خیال رکھوں گا اور تمہیں خوش رکھنے کی پوری کوشش کروں گا۔
+</p>
+
+<p>
+مریم! بس اتنا یاد رکھنا،
+میری زندگی میں تمہاری جگہ کوئی نہیں لے سکتا۔
+</p>
+
+<p class="english">
+I LOVE YOU MARIYAM ❤️
+<br>
+MY LOVE, MY LIFE, MY EVERYTHING 💍
+</p>
+
+</div>
+
+<button class="next-btn" onclick="showPage(4)">
+NEXT ❤️
+</button>
+
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section class="page" id="page4">
+
+<div class="glow"></div>
+
+<div class="final-heart">💗</div>
+
+<h1 class="final-title">I LOVE YOU</h1>
+
+<h1 class="final-title">MARIYAM ❤️</h1>
+
+<p class="forever">Forever & Always 💍</p>
+
+<p class="signature">
+مریم! تمہارا جٹ،
+<br>
+صرف اور صرف تمہارا جٹ ❤️
+<br>
+ہمیشہ تمہارا،
+<br>
+عبداللہ 💗
+</p>
+
+</section>
+
+
+<script>
+
+// PAGE CHANGING
+
+function showPage(number) {
+
+document.querySelectorAll('.page').forEach(page => {
+page.classList.remove('active');
+});
+
+document.getElementById('page'+number).classList.add('active');
+
+window.scrollTo(0,0);
+
+}
+
+
+// HEART CLICK AND BREAK
+
+let brokenCount = 0;
+
+function breakHeart(heart) {
+
+if(heart.classList.contains('broken')) return;
+
+const area = document.getElementById('heartArea');
+const areaRect = area.getBoundingClientRect();
+const rect = heart.getBoundingClientRect();
+
+let x = rect.left + rect.width/2 - areaRect.left;
+let y = rect.top + rect.height/2 - areaRect.top;
+
+x = Math.max(110, Math.min(areaRect.width-110, x));
+y = Math.max(35, Math.min(areaRect.height-35, y));
+
+const message = document.createElement('div');
+
+message.className = 'burst-message';
+message.innerText = 'I LOVE YOU MARIYAM ❤️';
+
+message.style.left = x + 'px';
+message.style.top = y + 'px';
+
+area.appendChild(message);
+
+heart.classList.add('broken');
+
+brokenCount++;
+
+document.getElementById('counter').innerText =
+(7-brokenCount) + ' دل باقی ہیں ❤️';
+
+setTimeout(() => {
+heart.style.visibility = 'hidden';
+},600);
+
+setTimeout(() => {
+message.style.transition = 'opacity .5s';
+message.style.opacity = '0';
+setTimeout(() => message.remove(),500);
+},2800);
+
+if(brokenCount === 7) {
+
+document.getElementById('counter').innerText =
+'مریم! تم نے میرے سارے دل جیت لیے ❤️';
+
+setTimeout(() => {
+document.getElementById('firstNext').classList.remove('hidden');
+},1000);
+
+}
+
+}
+
+
+// BIG HEART OPEN
+
+function openHeart() {
+
+const heart = document.getElementById('bigHeart');
+
+heart.classList.add('opening');
+
+setTimeout(() => {
+showPage(3);
+},900);
+
+}
+
+
+// FLOATING BACKGROUND HEARTS
+
+function createBackgroundHeart() {
+
+const heart = document.createElement('div');
+
+heart.className = 'bg-heart';
+
+const symbols = ['❤️','💗','💕','💖','💘'];
+
+heart.innerHTML = symbols[
+Math.floor(Math.random()*symbols.length)
+];
+
+heart.style.left = Math.random()*100 + 'vw';
+
+heart.style.fontSize =
+(15 + Math.random()*24) + 'px';
+
+heart.style.animationDuration =
+(5 + Math.random()*6) + 's';
+
+document.body.appendChild(heart);
+
+setTimeout(() => heart.remove(),12000);
+
+}
+
+setInterval(createBackgroundHeart,350);
+
+</script>
+
+</body>
+</html>
